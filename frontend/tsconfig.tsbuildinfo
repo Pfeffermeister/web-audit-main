@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/config.ts","./src/main.tsx","./src/components/a11yaccordion.tsx","./src/components/faq.tsx","./src/components/fakeprogress.tsx","./src/components/seoaccordion.tsx","./src/components/tabs.tsx","./src/lib/jobs.ts","./src/lib/types.ts","./src/pages/home.tsx","./src/pages/loading.tsx","./src/pages/result.tsx"],"version":"5.9.2"}

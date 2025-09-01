@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  web-audit-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: web-audit-backend
+    expose: ["3002"]              # für NPM
+    ports: ["3012:3002"]          # optional für Tests
+    environment:
+      - PORT=3002
+      - WCAG_WEBHOOK_URL=https://workflow.stradinger.me/webhook/wcag-scan
+      - SEO_WEBHOOK_URL=https://workflow.stradinger.me/webhook/seo-scan
+      - STATEMENT_WEBHOOK_URL=https://workflow.stradinger.me/webhook/statement-generation
+      - N8N_BASE_URL=https://workflow.stradinger.me
+    networks: [proxy_net]
+    restart: unless-stopped
+
+  web-audit-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: https://api.stradinger.me
+    container_name: web-audit-frontend
+    expose: ["80"]                # für NPM
+    ports: ["3011:80"]            # optional für Tests
+    depends_on: [web-audit-backend]
+    networks: [proxy_net]
+    restart: unless-stopped
+
+networks:
+  proxy_net:
+    external: true

@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root { color-scheme: light; }
+
+
+/* Sanfter Verlauf wie in den Screens */
+body { @apply bg-gradient-to-b from-sky-50 via-white to-sky-50 text-gray-900; }
+
+
+.prose h2 { @apply text-xl font-semibold; }
+.prose p { @apply text-gray-700; }
+
+
+/* Karten & Schatten etwas weicher */
+.card { @apply rounded-2xl bg-white shadow-lg ring-1 ring-slate-200; }
+
+
+/* Bewegungen reduzieren respektieren */
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* SEO Content Styling Override - Forciere Website-Design */
+.seo-content,
+.seo-content *,
+.seo-content *::before,
+.seo-content *::after {
+    all: unset !important;
+    display: revert !important;
+    box-sizing: border-box !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    color: #374151 !important;
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-align: left !important;
+    vertical-align: baseline !important;
+    white-space: normal !important;
+    word-wrap: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    text-indent: 0 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: auto !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    clip-path: none !important;
+    mask: none !important;
+}
+
+/* Container-spezifische Einstellungen */
+.seo-content {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    color: #374151 !important;
+    line-height: 1.625 !important;
+    font-size: 1rem !important;
+}
+
+/* Spezifische Typografie für SEO Content mit höchster Priorität */
+.seo-content h1,
+.seo-content h2,
+.seo-content h3,
+.seo-content h4,
+.seo-content h5,
+.seo-content h6 {
+    display: block !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content h1 { font-size: 1.875rem !important; line-height: 2.25rem !important; }
+.seo-content h2 { font-size: 1.5rem !important; line-height: 2rem !important; }
+.seo-content h3 { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+.seo-content h4 { font-size: 1.125rem !important; line-height: 1.5rem !important; }
+.seo-content h5 { font-size: 1rem !important; line-height: 1.5rem !important; }
+.seo-content h6 { font-size: 0.875rem !important; line-height: 1.25rem !important; }
+
+.seo-content p {
+    display: block !important;
+    color: #374151 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.625 !important;
+    font-size: 1rem !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content ul,
+.seo-content ol {
+    display: block !important;
+    margin: 1rem 0 !important;
+    padding-left: 1.5rem !important;
+    color: #374151 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content li {
+    display: list-item !important;
+    margin-bottom: 0.5rem !important;
+    color: #374151 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content a {
+    color: #0369a1 !important;
+    text-decoration: underline !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content a:hover {
+    color: #0284c7 !important;
+}
+
+.seo-content strong,
+.seo-content b {
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content em,
+.seo-content i {
+    font-style: italic !important;
+    color: #374151 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content table {
+    display: table !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    border-collapse: collapse !important;
+    border: 1px solid #e5e7eb !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content th,
+.seo-content td {
+    display: table-cell !important;
+    padding: 0.75rem !important;
+    border: 1px solid #e5e7eb !important;
+    text-align: left !important;
+    color: #374151 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    vertical-align: top !important;
+}
+
+.seo-content th {
+    background-color: #f9fafb !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+.seo-content tr {
+    display: table-row !important;
+}
+
+.seo-content thead {
+    display: table-header-group !important;
+}
+
+.seo-content tbody {
+    display: table-row-group !important;
+}
+
+.seo-content div {
+    display: block !important;
+    color: #374151 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.seo-content span {
+    display: inline !important;
+    color: #374151 !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+/* Verstecke oder neutralisiere problematische Elemente */
+.seo-content script,
+.seo-content style,
+.seo-content iframe,
+.seo-content embed,
+.seo-content object,
+.seo-content applet,
+.seo-content canvas,
+.seo-content audio,
+.seo-content video {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Spezielle Behandlung für WordPress/CMS-typische Klassen */
+.seo-content [class*="wp-"],
+.seo-content [class*="post-"],
+.seo-content [class*="entry-"],
+.seo-content [class*="content-"],
+.seo-content [class*="article-"],
+.seo-content [class*="blog-"],
+.seo-content [id*="wp-"],
+.seo-content [id*="post-"],
+.seo-content [id*="entry-"],
+.seo-content [id*="content-"],
+.seo-content [id*="article-"],
+.seo-content [id*="blog-"] {
+    all: unset !important;
+    display: revert !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    color: #374151 !important;
+}
