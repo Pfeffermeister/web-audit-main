@@ -5,28 +5,19 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-const cors = require('cors');
-const ORIGIN = 'https://websiteaudit.stradinger.me';
+// CORS-Konfiguration
+const corsOptions = {
+  origin: 'https://websiteaudit.stradinger.me',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
 
-app.use(cors({
-  origin: ORIGIN,
-  methods: ['GET','POST','OPTIONS'],
-  allowedHeaders: ['Content-Type','Authorization'],
-  optionsSuccessStatus: 204
-}));
-
-// Preflight global
-app.options('*', cors({
-  origin: ORIGIN,
-  methods: ['GET','POST','OPTIONS'],
-  allowedHeaders: ['Content-Type','Authorization'],
-  optionsSuccessStatus: 204
-}));
-
-
+// CORS Middleware
+app.use(cors(corsOptions));
 
 // Middleware
-app.use(cors());
 app.use(express.json());
 
 // Health Check
