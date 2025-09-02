@@ -12,13 +12,17 @@ app.use(cors({
   origin: ORIGIN,
   methods: ['GET','POST','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
+  optionsSuccessStatus: 204
 }));
 
+// Preflight global
 app.options('*', cors({
   origin: ORIGIN,
   methods: ['GET','POST','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
+  optionsSuccessStatus: 204
 }));
+
 
 
 // Middleware
@@ -255,7 +259,9 @@ app.post('/api/statement-generation', async (req, res) => {
 
 const http = require('http');
 const server = http.createServer(app);
-server.headersTimeout = 650000;
+server.headersTimeout = 650000;   // 650s
 server.requestTimeout = 650000;
 server.listen(PORT, () => console.log(`listen ${PORT}`));
+
+
 
