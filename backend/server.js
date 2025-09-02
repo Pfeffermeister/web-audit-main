@@ -5,6 +5,22 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
+const cors = require('cors');
+const ORIGIN = 'https://websiteaudit.stradinger.me';
+
+app.use(cors({
+  origin: ORIGIN,
+  methods: ['GET','POST','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
+}));
+
+app.options('*', cors({
+  origin: ORIGIN,
+  methods: ['GET','POST','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
+}));
+
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -237,7 +253,9 @@ app.post('/api/statement-generation', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend Server läuft auf Port ${PORT}`);
-  console.log(`Health Check: http://localhost:${PORT}/health`);
-});
+const http = require('http');
+const server = http.createServer(app);
+server.headersTimeout = 650000;
+server.requestTimeout = 650000;
+server.listen(PORT, () => console.log(`listen ${PORT}`));
+
